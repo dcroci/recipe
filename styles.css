@@ -207,6 +207,8 @@ header ul {
   width: 100%;
   margin: 0 auto;
   justify-content: space-around;
+  color: var(--orange);
+  font-weight: bold;
 }
 header ul img {
   width: 40px;
@@ -301,11 +303,7 @@ svg {
 }
 
 /* START OF DROPDOWN MENU */
-#main-nav ul {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.2s ease-out;
-}
+
 label {
   cursor: pointer;
   display: inline-block;
@@ -341,6 +339,7 @@ nav input {
 }
 input:checked ~ ul {
   max-height: 500px;
+  display: block;
 }
 input:checked ~ label span {
   background: transparent;
@@ -355,26 +354,7 @@ input:checked ~ label:not(.steps) span:before,
 input:checked ~ label:not(.steps) span:after {
   top: 0;
 }
-#main-nav {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  display: flex;
-}
-#main-nav li:nth-of-type(9) {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 20%;
-  color: #eb5428;
-  background-color: #eb5428;
-}
-#main-nav img:nth-of-type(1) {
-  width: 100%;
-}
-#main-nav img {
-  width: 20%;
-}
+
 label {
   display: flex;
 }
