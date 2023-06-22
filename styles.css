@@ -201,8 +201,31 @@ img {
 h3 {
   text-align: center;
 }
+header ul {
+  display: flex;
+  list-style-type: none;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+header ul img {
+  width: 40px;
+}
+header li {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+header h2 {
+  text-align: center;
+}
+.hidden {
+  visibility: hidden;
+  display: none;
+}
 #details span {
   font-weight: bold;
+  padding-left: 0.5rem;
 }
 #header ul {
   display: grid;
@@ -216,24 +239,32 @@ h3 {
 #sides {
   background-color: var(--dark-green);
   text-align: center;
+  border-bottom: 30px solid var(--gray);
 }
 #sides img {
   width: 100%;
   grid-column-start: 1;
   grid-column-end: 1;
+  padding-left: 0.5rem;
+}
+#sides section p:nth-of-type(2) {
+  font-weight: bold;
+}
+#sides h3 {
+  padding-bottom: 2rem;
+  padding-top: 1rem;
 }
 #sides h4 {
   grid-column-start: 2;
   grid-column-end: 5;
   text-align: left;
-  grid-row-start: 1;
-  grid-row-end: 1;
   height: fit-content;
+  grid-row-start: 1;
+  padding-left: 1rem;
 }
 #sides section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
   height: 200px;
 }
 #sides p {
@@ -241,20 +272,181 @@ h3 {
   grid-column-end: 5;
   text-align: left;
   height: fit-content;
-  grid-row-start: 2;
-  grid-row-end: 2;
+  grid-row-start: 1;
+  padding-top: 2rem;
+  padding-left: 1rem;
 }
 #sides p:nth-of-type(2) {
   grid-column-start: 2;
   grid-column-end: 5;
-  grid-row-start: 3;
-  grid-row-end: 3;
+  grid-row-start: 1;
+  padding-top: 3.5rem;
+  padding-left: 1rem;
 }
 .stars {
   display: flex;
-  grid-row-start: 4;
-  grid-row-end: 4;
   grid-column-start: 2;
   grid-column-end: 5;
-  width: 50%;
+  grid-row-start: 1;
+  padding-left: 1rem;
+  padding-top: 5.5rem;
+}
+svg {
+  color: var(--orange);
+}
+#mexican-rice svg:nth-of-type(5),
+#guac svg:nth-of-type(5),
+#tortillas svg:nth-of-type(5) {
+  color: white;
+}
+
+/* START OF DROPDOWN MENU */
+#main-nav ul {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+label {
+  cursor: pointer;
+  display: inline-block;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+  background-color: white;
+}
+label span {
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background-color 0.2s ease-out;
+  width: 18px;
+}
+label span:before,
+label span:after {
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+label span:before {
+  top: 5px;
+}
+label span:after {
+  top: -5px;
+}
+nav input {
+  display: none;
+}
+input:checked ~ ul {
+  max-height: 500px;
+}
+input:checked ~ label span {
+  background: transparent;
+}
+input:checked ~ label span:before {
+  transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+  transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before,
+input:checked ~ label:not(.steps) span:after {
+  top: 0;
+}
+#main-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+}
+#main-nav li:nth-of-type(9) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  color: #eb5428;
+  background-color: #eb5428;
+}
+#main-nav img:nth-of-type(1) {
+  width: 100%;
+}
+#main-nav img {
+  width: 20%;
+}
+label {
+  display: flex;
+}
+footer img {
+  width: 40%;
+}
+#connect ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+}
+#connect li {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  color: var(--orange);
+  font-weight: bold;
+}
+#connect img {
+  width: 50px;
+}
+
+@media screen and (min-width: 834px) {
+  ul {
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  label span,
+  input {
+    display: none;
+  }
+}
+/* END OF DROPDOWN */
+.info p {
+  padding: 1rem 0.4rem;
+  line-height: 1.5;
+}
+#details li {
+  padding-bottom: 0.5rem;
+}
+#details h3 {
+  padding-bottom: 1rem;
+}
+#ingredients li {
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+  padding-bottom: 1rem;
+  list-style-type: square;
+}
+#ingredients h3 {
+  padding-bottom: 1rem;
+}
+#directions li {
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+  padding-bottom: 1rem;
+}
+#directions h3 {
+  padding-bottom: 1rem;
+}
+#directions {
+  line-height: 1.5;
+}
+footer {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+  gap: 2rem;
 }
