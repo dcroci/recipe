@@ -106,7 +106,13 @@ section {
 }
 body {
   line-height: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-color: white;
 }
+
 blockquote,
 q {
   quotes: none;
@@ -190,18 +196,14 @@ dt {
 html {
   background-color: var(--dark-green);
 }
-body {
-  max-width: 1080px;
-  margin: 0 auto;
-  background-color: white;
-}
+
 img {
   width: 100%;
 }
 h3 {
   text-align: center;
 }
-header ul {
+header menu {
   display: flex;
   list-style-type: none;
   width: 100%;
@@ -210,7 +212,7 @@ header ul {
   color: var(--orange);
   font-weight: bold;
 }
-header ul img {
+header menu img {
   width: 40px;
 }
 header li {
@@ -304,60 +306,6 @@ svg {
 
 /* START OF DROPDOWN MENU */
 
-label {
-  cursor: pointer;
-  display: inline-block;
-  padding: 28px 20px;
-  position: relative;
-  user-select: none;
-  background-color: white;
-}
-label span {
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background-color 0.2s ease-out;
-  width: 18px;
-}
-label span:before,
-label span:after {
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
-}
-label span:before {
-  top: 5px;
-}
-label span:after {
-  top: -5px;
-}
-nav input {
-  display: none;
-}
-input:checked ~ ul {
-  max-height: 500px;
-  display: block;
-}
-input:checked ~ label span {
-  background: transparent;
-}
-input:checked ~ label span:before {
-  transform: rotate(-45deg);
-}
-input:checked ~ label span:after {
-  transform: rotate(45deg);
-}
-input:checked ~ label:not(.steps) span:before,
-input:checked ~ label:not(.steps) span:after {
-  top: 0;
-}
-
-label {
-  display: flex;
-}
 footer img {
   width: 40%;
 }
@@ -378,19 +326,6 @@ footer img {
   width: 50px;
 }
 
-@media screen and (min-width: 834px) {
-  ul {
-    overflow: visible;
-    position: absolute;
-    top: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
-  label span,
-  input {
-    display: none;
-  }
-}
 /* END OF DROPDOWN */
 .info p {
   padding: 1rem 0.4rem;
@@ -429,4 +364,143 @@ footer {
   align-items: center;
   font-weight: bold;
   gap: 2rem;
+}
+
+#main-nav {
+  order: -1;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 100px;
+  width: 100%;
+}
+.avatar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column-reverse;
+  user-select: none;
+  align-items: center;
+  height: 75.5667px;
+  margin-right: 2%;
+  width: 90px;
+}
+.logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column-reverse;
+  user-select: none;
+  align-items: center;
+  background-color: var(--orange);
+  width: fit-content;
+  height: 75.5667px;
+  padding: 0 16%;
+  justify-content: center;
+}
+
+/* GIVEN CODE */
+#main-nav ul {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column-reverse;
+  user-select: none;
+  align-items: center;
+  height: 75.5667px;
+  margin-left: 2%;
+  width: 90px;
+}
+label img {
+  width: 40px;
+}
+
+label span {
+  background-color: #ffffff;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background-color 0.2s ease-out;
+  width: 18px;
+}
+label span:before,
+label span:after {
+  background: orange;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+label span:before {
+  top: 5px;
+}
+label span:after {
+  top: -5px;
+}
+input {
+  display: none;
+}
+input:checked ~ ul {
+  max-height: 500px;
+}
+input:checked ~ label span {
+  background: transparent;
+}
+input:checked ~ label span:before {
+  transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+  transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before,
+input:checked ~ label:not(.steps) span:after {
+  top: 0;
+}
+
+@media screen and (min-width: 834px) {
+  ul {
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  label span,
+  input {
+    display: none;
+  }
+}
+/*END OF GIVEN CODE */
+
+/*SEARCH BAR*/
+#search {
+  order: -1;
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  padding: 10px;
+}
+#search input {
+  display: inline;
+  border-color: #eb5428;
+}
+#search button {
+  border: none;
+  background-color: #eb5428;
+  height: 30px;
 }
