@@ -108,7 +108,7 @@ body {
   line-height: 1;
   display: flex;
   flex-direction: column;
-  max-width: 1080px;
+  max-width: 1280px;
   margin: 0 auto;
   background-color: white;
 }
@@ -207,7 +207,7 @@ dt {
   font-weight: bold;
 }
 html {
-  background-color: var(--dark-green);
+  background-color: var(--light-green);
 }
 
 img {
@@ -489,19 +489,6 @@ input:checked ~ label:not(.steps) span:after {
   top: 0;
 }
 
-@media screen and (min-width: 834px) {
-  ul {
-    overflow: visible;
-    position: absolute;
-    top: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
-  label span,
-  input {
-    display: none;
-  }
-}
 /*END OF GIVEN CODE */
 
 /*SEARCH BAR*/
@@ -629,7 +616,181 @@ main {
     margin-top: 0;
     background-color: var(--gray);
     padding: 0;
-    top: 0;
+    top: 3%;
+    right: 18%;
+  }
+  #details ul {
+    list-style: none;
+    text-align: center;
+  }
+  #details span {
+    padding-right: 0.5rem;
+  }
+  #sides {
+    border-bottom: none;
+  }
+  #main-nav {
+    margin-top: 75.5667px;
+    padding: 2rem 0;
+  }
+  #main-nav ul {
+    display: flex;
+    max-height: 100%;
+  }
+  #main-nav li {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--orange);
+  }
+  #main-nav li:nth-of-type(1) {
+    display: none;
+  }
+  #main-nav ul img {
+    width: 60%;
+    padding-bottom: 0.5rem;
+  }
+  #main-nav .logo img {
+    width: 100%;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #details {
+    background-color: black;
+    color: var(--dark-green);
+    flex-direction: column;
+    padding: 1rem 0;
+    line-height: 1.5;
+  }
+  #details ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  #details li {
+    display: flex;
+    flex-direction: column;
+  }
+  #search {
+    order: -1;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    margin-top: 75.5667px;
+    background-color: var(--gray);
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+  header h2 {
+    text-align: center;
+    border: none;
+    margin-top: 100px;
+  }
+  header menu {
+    flex-direction: column;
+    position: absolute;
+    justify-content: flex-start;
+    width: 150px;
+    background-color: white;
+    height: 545.15px;
+    padding: 0;
+    border: 4px solid var(--orange);
+  }
+  header menu li {
+    padding-bottom: 2rem;
+  }
+  .flex {
+    display: flex;
+    background-color: var(--gray);
+  }
+  .flex img {
+    margin-left: 11.5%;
+  }
+  #directions ol {
+    justify-content: flex-start;
+  }
+  #directions li {
+    padding-bottom: 3rem;
+  }
+  #sides {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  #sides h3 {
+    grid-column: 1 / 5;
+  }
+  #sides section {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 416px;
+  }
+  #sides img {
+    width: 350%;
+    grid-row-start: 1;
+  }
+  #sides h4 {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    padding-top: 1rem;
+  }
+  #sides p {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    padding-top: 1rem;
+    grid-column-end: 4;
+  }
+  #sides section p:nth-of-type(2) {
+    grid-row-start: 4;
+    grid-column-start: 1;
+    padding-top: 1rem;
+  }
+  .stars {
+    grid-row-start: 4;
+    grid-column-start: 2;
+    padding-top: 1rem;
+  }
+  #main-nav {
+    margin-top: 0;
+    width: 70%;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+  body {
+    position: relative;
+  }
+  .logo {
+    height: 136.8px;
+    width: 6%;
+  }
+  .avatar {
+    height: 136.8px;
+    width: 6%;
+  }
+  #search {
+    top: 3%;
     right: 0;
+    left: 0;
+  }
+  footer img {
+    width: 50%;
+  }
+  .flex-it-reverse {
+    justify-content: space-between;
+    gap: 35rem;
+  }
+  footer {
+    padding: 2rem 0 2rem 0rem;
+    align-items: flex-start;
+    flex-direction: row-reverse;
   }
 }
