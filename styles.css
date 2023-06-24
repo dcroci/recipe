@@ -343,6 +343,11 @@ footer img {
 #connect img {
   width: 50px;
 }
+#main-nav input,
+#main-nav label {
+  cursor: pointer;
+  pointer-events: none;
+}
 
 /* END OF DROPDOWN */
 .info p {
@@ -421,11 +426,6 @@ footer {
   padding: 0 16%;
   justify-content: center;
 }
-#main-nav input,
-#main-nav label {
-  cursor: pointer;
-  pointer-events: none;
-}
 
 /* GIVEN CODE */
 #main-nav ul {
@@ -480,23 +480,21 @@ label span:after {
 label span:before {
   top: 5px;
 }
+.avatar h3 {
+  color: black;
+}
 label span:after {
   top: -5px;
 }
-input {
+#main-nav input {
   display: none;
-}
-#menu-btn:checked {
-  color: white;
-  background-color: white;
   visibility: hidden;
 }
 #menu-btn:checked > ul {
   max-height: 400px;
 }
 #menu-btn:checked ~ ul {
-  display: flex;
-  height: 200px;
+  display: block;
 }
 input:checked ~ label span {
   background: transparent;
@@ -546,17 +544,9 @@ main {
     padding: 12px;
     border: 1px solid black;
   }
-  .avatar h3 {
-    color: black;
-  }
   menu {
     background-color: rgba(255, 255, 255, 0.578);
     position: absolute;
-  }
-  #main-nav input,
-  #main-nav label {
-    cursor: initial;
-    pointer-events: none;
   }
   .flex-it {
     display: flex;
@@ -796,9 +786,6 @@ main {
     width: 70%;
     margin: 0 auto;
     padding: 1rem 0;
-  }
-  .menu-icon {
-    margin-top: 1rem;
   }
   body {
     position: relative;
