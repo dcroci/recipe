@@ -209,7 +209,17 @@ dt {
 html {
   background-color: var(--light-green);
 }
-
+a {
+  text-decoration: none;
+  color: unset;
+}
+#connect a {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  color: var(--orange);
+  font-weight: bold;
+}
 img {
   width: 100%;
 }
@@ -444,16 +454,20 @@ footer {
 }
 label {
   position: absolute;
-  top: 0;
+  top: 10px;
   left: 0;
   cursor: pointer;
   display: inline-flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   user-select: none;
   align-items: center;
   height: 75.5667px;
   margin-left: 2%;
   width: 90px;
+}
+label {
+  font-size: 25px;
+  font-family: 'Bebas Neue', sans-serif;
 }
 label img {
   width: 40px;
@@ -542,11 +556,22 @@ main {
   header h2 {
     text-align: left;
     padding: 12px;
-    border: 1px solid black;
+  }
+  header {
+    border-top: 2px solid #ded8d8;
+  }
+  #connect a {
+    padding: 1rem;
   }
   menu {
     background-color: rgba(255, 255, 255, 0.578);
     position: absolute;
+  }
+  menu li {
+    cursor: pointer;
+  }
+  #main-nav li {
+    cursor: pointer;
   }
   .flex-it {
     display: flex;
@@ -736,6 +761,7 @@ main {
   }
   #directions ol {
     justify-content: flex-start;
+    padding: 0 1rem;
   }
   #directions li {
     padding-bottom: 3rem;
@@ -804,15 +830,15 @@ main {
     left: 0;
   }
   footer img {
-    width: 50%;
+    width: 40%;
   }
   .flex-it-reverse {
     justify-content: space-between;
-    gap: 35rem;
   }
   footer {
-    padding: 2rem 0 2rem 0rem;
+    padding: 2rem 0rem 2rem 0rem;
     align-items: flex-start;
     flex-direction: row-reverse;
+    justify-content: start;
   }
 }
